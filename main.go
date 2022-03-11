@@ -20,9 +20,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	_, err = clientset.CoreV1().Pods("default").List(context.Background(), metav1.ListOptions{})
+	_, err = clientset.CoreV1().Services("").List(context.Background(), metav1.ListOptions{})
 	if err != nil {
-		log.Fatalln("failed to connect to cluster and fetch pods in default ns", err)
+		log.Fatalln("failed to connect to cluster and fetch services in default ns", err)
 	}
 }
 
